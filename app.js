@@ -2,13 +2,12 @@ import express from 'express';
 import usuarioRouter from './src/routers/usuarios.router.js';
 import bodyParser from "body-parser";
 
-
+// Importacion de rutas
 import novedad from './src/routers/novedades.router.js';
 import elemento from "./src/routers/elementos.router.js";
 import ambientes from "./src/routers/ambientes.router.js";
 import area from "./src/routers/areas.router.js";
-import prestamos from './src/routers/prestamos.router.js'
-
+import prestamos from './src/routers/prestamos.router.js';
 
 const app = express();
 const PORT = 3000;
@@ -27,6 +26,7 @@ app.use('/elemento', elemento);
 app.use('/ambientes', ambientes);
 app.use('/area', area);
 app.use('/prestamos',prestamos);
+
 
 app.listen(PORT, () => {
   console.log(`Servidor iniciado en http://localhost:${PORT}`);
