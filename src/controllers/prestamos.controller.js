@@ -49,13 +49,13 @@ export const actualizarPrestamos = async (req,res)=> {
                                     nombre_celador = ?,
                                     observaciones = ?,
                                     fk_usuario = ?,
-                                    fk_ambiente = ?,
+                                    fk_ambiente = ?
                                     WHERE id_prestamo = ?`;
         let [rows] = await pool.query(sql, [nombre_ambiente, fecha_prestamo, fecha_entrega,nombre_celador,observaciones,fk_usuario,fk_ambiente ,id]);
         if(rows.affectedRows>0){
-            return res.status(200).json({"message": "prestamo actualizada con exito"})
+            return res.status(200).json({"message": "prestamo actualizado con exito"})
         }else{
-            return res.status(403).json({"message": "prestamo no actualizada"});
+            return res.status(403).json({"message": "prestamo no actualizadao"});
         }
     }catch(e){
         return res.status(500).json({"message": e.message});
