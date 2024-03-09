@@ -29,17 +29,12 @@ app.use('/prestamos',prestamos);
 
 
 // Documentancion
-app.get('/documentacion', (req, res) => {
-  try {
-    // Lee el contenido del archivo EJS
-    const ejsContent = fs.readFileSync('./doc/documentacion.ejs', 'utf-8');
+app.set('view engine', 'ejs');
+app.set('views','./src/views');
+app.use(express.static('./src/public'));
 
-    // Envía el contenido del archivo directamente como respuesta al cliente
-    res.send(ejsContent);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Error al procesar la solicitud');
-  }
+app.get('/documents',(req, res) => {
+    res.render('documentacion.ejs');
 });
 
 
