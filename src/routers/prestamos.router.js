@@ -4,10 +4,10 @@ import { listarPrestamo, registrarPrestamos, eliminarPrestamos, actualizarPresta
 
 const router = Router();
 
-router.get('/ListarPrestamo', listarPrestamo);
-router.post('/registrarPrestamo', registrarPrestamos);
-router.delete('/eliminarPrestamo/:id', eliminarPrestamos);
-router.put('/actualizarPrestamo/:id', actualizarPrestamos);
-router.get('/consultarPrestamo/:id', consultarPrestamos);
+router.get('/listar', listarPrestamo);
+router.post('/registrar', registrarPrestamos);
+router.delete('/eliminar/:id', eliminarPrestamos);
+router.put('/actualizar/:id', actualizarPrestamos);
+router.get('/consultar/:id', consultarPrestamos);
 
 export default router;

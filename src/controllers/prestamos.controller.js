@@ -2,14 +2,14 @@ import { pool } from '../database/conexion.js';
 
 export const listarPrestamo = async(req,res)=> {
 
-    const [result] = await pool.query('select * from prestamos');
+    const [result] = await pool.query('select * from prestamo');
     res.status(200).json(result);
 };
 
 export const registrarPrestamos = async(req,res)=> {
     try{
-        let {id_prestamo,nombre_ambiente,fecha_prestamo,fecha_entrega,nombre_celador,observaciones,fk_usuario,fk_ambiente} = req.body;
-        let sql = `insert into prestamos (id_prestamo,nombre_ambiente,fecha_prestamo,fecha_entrega,nombre_celador,observaciones,fk_usuario,fk_ambiente) values('${id_prestamo}','${nombre_ambiente}','${fecha_prestamo}','${fecha_entrega}','${nombre_celador}','${observaciones}','${fk_usuario}','${fk_ambiente}')`;
+        let {nombre_ambiente,fecha_prestamo,fecha_entrega,nombre_celador,observaciones,fk_usuario,fk_ambiente} = req.body;
+        let sql = `insert into prestamo (nombre_ambiente,fecha_prestamo,fecha_entrega,nombre_celador,observaciones,fk_usuario,fk_ambiente) values('${nombre_ambiente}','${fecha_prestamo}','${fecha_entrega}','${nombre_celador}','${observaciones}','${fk_usuario}','${fk_ambiente}')`;
     
         let [rows] = await pool.query(sql);
 
@@ -26,7 +26,7 @@ export const registrarPrestamos = async(req,res)=> {
 export const eliminarPrestamos = async (req,res)=>{
     try{
         let id = req.params.id;
-        let sql = `delete from prestamos where id_prestamo = ${id}`;
+        let sql = `delete from prestamo where id_prestamo = ${id}`;
         let [rows] = await pool.query(sql);
 
         if(rows.affectedRows>0){
@@ -43,19 +43,19 @@ export const actualizarPrestamos = async (req,res)=> {
     try{
         let id = req.params.id;
         let {nombre_ambiente , fecha_prestamo, fecha_entrega,nombre_celador,observaciones,fk_usuario,fk_ambiente} = req.body;
-        let sql = `UPDATE prestamos SET nombre_ambiente = ?,
+        let sql = `UPDATE prestamo SET nombre_ambiente = ?,
                                     fecha_prestamo = ?,
                                     fecha_entrega = ?,
                                     nombre_celador = ?,
                                     observaciones = ?,
                                     fk_usuario = ?,
-                                    fk_ambiente = ?,
+                                    fk_ambiente = ?
                                     WHERE id_prestamo = ?`;
         let [rows] = await pool.query(sql, [nombre_ambiente, fecha_prestamo, fecha_entrega,nombre_celador,observaciones,fk_usuario,fk_ambiente ,id]);
         if(rows.affectedRows>0){
-            return res.status(200).json({"message": "prestamo actualizada con exito"})
+            return res.status(200).json({"message": "prestamo actualizado con exito"})
         }else{
-            return res.status(403).json({"message": "prestamo no actualizada"});
+            return res.status(403).json({"message": "prestamo no actualizadao"});
         }
     }catch(e){
         return res.status(500).json({"message": e.message});
@@ -65,7 +65,7 @@ export const actualizarPrestamos = async (req,res)=> {
 export const consultarPrestamos = async (req,res)=>{
     try{
         let id = req.params.id;
-        let sql = `select * from prestamos where id_prestamo = ?`;
+        let sql = `select * from prestamo where id_prestamo = ?`;
         let [rows]=await pool.query(sql, [id]);
         if(rows.length>0){
             return res.status(200).json(rows);
