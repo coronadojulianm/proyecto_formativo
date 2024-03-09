@@ -16,7 +16,7 @@ export const registrarPrestamos = async(req,res)=> {
         if(rows.affectedRows>0){
             return res.status(200).json({"message": "se registro con exito el prestamo"});
         }else{
-            return res.status(403).json({"message": "prestamo no registrada"});
+            return res.status(403).json({"message": "Error al registrar prestamos"});
         }
     }catch(e){
         return res.status(500).json({"message": e.message});
@@ -30,7 +30,7 @@ export const eliminarPrestamos = async (req,res)=>{
         let [rows] = await pool.query(sql);
 
         if(rows.affectedRows>0){
-            return res.status(200).json({"message": "prestamo eliminada con exito"})
+            return res.status(200).json({"message": "prestamo eliminado con exito"})
         }else{
             return res.status(403).json({"message": "prestamo no eliminado"});
         }
@@ -55,7 +55,7 @@ export const actualizarPrestamos = async (req,res)=> {
         if(rows.affectedRows>0){
             return res.status(200).json({"message": "prestamo actualizado con exito"})
         }else{
-            return res.status(403).json({"message": "prestamo no actualizadao"});
+            return res.status(403).json({"message": "prestamo no actualizado"});
         }
     }catch(e){
         return res.status(500).json({"message": e.message});
