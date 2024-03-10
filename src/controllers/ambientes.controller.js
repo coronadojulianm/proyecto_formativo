@@ -7,7 +7,7 @@ export const listarAmbientes = async(req,res)=> {
             if(result.length>0){
                 return res.status(200).json(result); 
             } else {
-                return res.status(404).json({'message': 'No se econtraron ambientes'});
+                return res.status(404).json({'message': 'No se encontraron ambientes'});
             }
         }catch(e){
             return res.status(500).json({'message': 'error' + e});
