@@ -7,6 +7,8 @@
     <title>Documents</title>
 </head>
 <body>
+
+
     <!-- Listar Usuarios -->
     <div>
         <br>
@@ -181,6 +183,498 @@
             </td></tr>
         </table>
     </div>
+
+    <!-- LISTAR PRESTAMOS -->
+    <div>
+        <br>
+        <table class="table table-bordered">
+            <h3>Listar Prestamo</h3>
+            <tr><td>Numero</td><td>6</td></tr>
+            <tr><td>Nombre endpoint</td><td>Listar Prestamos</td></tr>
+            <tr><td>URL</td><td>http://localhost:3000/prestamos/listar</td></tr>
+            <tr><td>Descripción</td><td>Endpoint para Listar los prestamos de la base de datos</td></tr>
+            <tr><td>Verbo HTTP</td><td>GET</td></tr>
+            <tr><td>Header</td><td>Content-type: JSON</td></tr>
+            <tr><td>Request JSON</td><td>
+                {<br>
+                    null <br>
+                }</td></tr>
+            <tr><td>Response</td><td>
+                <div>Correcto:</div>
+                "status": "200"<br>
+                Body :{<br>
+                        "id_prestamo": 1,<br>
+                        "nombre_ambiente": "Y12",<br>
+                        "fecha_prestamo": "2024-03-05T05:00:00.000Z",<br>
+                        "fecha_entrega": "2024-03-04T05:00:00.000Z",<br>
+                        "nombre_celador": "carlos",<br>
+                        "observaciones": "ninguna",<br>
+                        "fk_usuario": 1,<br>
+                        "fk_ambiente": 1 <br>
+                }
+                <div>Incorrecto</div>
+                "status": "500"<br>
+                Body :{<br>
+                "message: "Error al listar prestamos"<br>
+                }
+            </td></tr>
+        </table>
+    </div>
+    <!-- REGISTRAR PRESTAMOS -->
+    <div>
+        <br>
+        <table class="table table-bordered">
+            <h3>Registrar Prestamos</h3>
+            <tr><td>Numero</td><td>7</td></tr>
+            <tr><td>Nombre endpoint</td><td>Registrar Prestamos</td></tr>
+            <tr><td>URL</td><td>http://localhost:3000/prestamos/registrar</td></tr>
+            <tr><td>Descripción</td><td>Endpoint para registrar los prestamos de la base de datos</td></tr>
+            <tr><td>Verbo HTTP</td><td>POST</td></tr>
+            <tr><td>Header</td><td>Content-type: JSON</td></tr>
+            <tr><td>Request JSON</td><td>
+                {<br>
+                        "nombre_ambiente": "Y12 nuevo",<br>
+                        "fecha_prestamo": "2024-03-05",<br>
+                        "fecha_entrega": "2024-03-04",<br>
+                        "nombre_celador": "carlos nuevo",<br>
+                        "observaciones": "ninguna",<br>
+                        "fk_usuario": 1,<br>
+                        "fk_ambiente": 1 <br>
+                }</td></tr>
+            <tr><td>Response</td><td>
+                <div>Correcto:</div>
+                "status": "200"<br>
+                Body :{<br>
+                        "message": "se registro con exito el prestamo"
+                    }
+                <div>Incorrecto</div>
+                "status": "500"<br>
+                Body :{<br>
+                "message: "Error al Registrar prestamo"<br>
+                }
+            </td></tr>
+        </table>
+    </div>
+    <!-- ELIMINAR PRESTAMOS -->
+    <div>
+        <br>
+        <table class="table table-bordered">
+            <h3>Eliminar Prestamos</h3>
+            <tr><td>Numero</td><td>8</td></tr>
+            <tr><td>Nombre endpoint</td><td>Eliminar Prestamos</td></tr>
+            <tr><td>URL</td><td>http://localhost:3000/prestamos/eliminar/:id</td></tr>
+            <tr><td>Descripción</td><td>Endpoint para Eliminar los prestamos de la base de datos</td></tr>
+            <tr><td>Verbo HTTP</td><td>DELETE</td></tr>
+            <tr><td>Header</td><td>Content-type: JSON</td></tr>
+            <tr><td>Request JSON</td><td>
+                {<br>
+                    null <br>
+                }</td></tr>
+            <tr><td>Response</td><td>
+                <div>Correcto:</div>
+                "status": "200"<br>
+                Body :{<br>
+                        "message": "prestamo eliminado con exito"
+                    }
+                <div>Incorrecto</div>
+                "status": "500"<br>
+                Body :{<br>
+                "message: "prestamo no eliminado"<br>
+                }
+            </td></tr>
+        </table>
+    </div>
+    <!-- ACTUALIZAR PRESTAMOS -->
+    <div>
+        <br>
+        <table class="table table-bordered">
+            <h3>Actualizar Prestamos</h3>
+            <tr><td>Numero</td><td>9</td></tr>
+            <tr><td>Nombre endpoint</td><td>Actualizar Prestamos</td></tr>
+            <tr><td>URL</td><td>http://localhost:3000/prestamos/actualizar/:id</td></tr>
+            <tr><td>Descripción</td><td>Endpoint para Actualizar los prestamos de la base de datos</td></tr>
+            <tr><td>Verbo HTTP</td><td>PUT</td></tr>
+            <tr><td>Header</td><td>Content-type: JSON</td></tr>
+            <tr><td>Request JSON</td><td>
+                {<br>
+                        "nombre_ambiente": "Y12 Actualizado",<br>
+                        "fecha_prestamo": "2024-03-05",<br>
+                        "fecha_entrega": "2024-03-04",<br>
+                        "nombre_celador": "carlos actualizado",<br>
+                        "observaciones": "ninguna",<br>
+                        "fk_usuario": 1,<br>
+                        "fk_ambiente": 1 <br>
+                }</td></tr>
+            <tr><td>Response</td><td>
+                <div>Correcto:</div>
+                "status": "200"<br>
+                Body :{<br>
+                        "message": "prestamo actualizado con exito"
+                    }
+                <div>Incorrecto</div>
+                "status": "500"<br>
+                Body :{<br>
+                "message: "prestamo no actualizado"<br>
+                }
+            </td></tr>
+        </table>
+    </div>
+    <!-- BUSCAR PRESTAMO POR ID -->
+    <div>
+        <br>
+        <table class="table table-bordered">
+            <h3>Buscar Prestamos por ID</h3>
+            <tr><td>Numero</td><td>10</td></tr>
+            <tr><td>Nombre endpoint</td><td>Buscar Prestamos por ID</td></tr>
+            <tr><td>URL</td><td>http://localhost:3000/prestamos/consultar/:id</td></tr>
+            <tr><td>Descripción</td><td>Endpoint para Consultar los prestamos de la base de datos</td></tr>
+            <tr><td>Verbo HTTP</td><td>GET</td></tr>
+            <tr><td>Header</td><td>Content-type: JSON</td></tr>
+            <tr><td>Request JSON</td><td>
+                {<br>
+                    null <br>
+                }</td></tr>
+            <tr><td>Response</td><td>
+                <div>Correcto:</div>
+                "status": "200"<br>
+                Body :{<br>
+                        "id_prestamo": 1, <br>
+                        "nombre_ambiente": "Y12 Actualizado",<br>
+                        "fecha_prestamo": "2024-03-05T05:00:00.000Z",<br>
+                        "fecha_entrega": "2024-03-04T05:00:00.000Z",<br>
+                        "nombre_celador": "carlos actualizado",<br>
+                        "observaciones": "ninguna",<br>
+                        "fk_usuario": 1,<br>
+                        "fk_ambiente": 1 <br>
+                    }
+                <div>Incorrecto</div>
+                "status": "404"<br>
+                Body :{<br>
+                "message: "prestamo no encontrado"<br>
+                }
+            </td></tr>
+        </table>
+    </div>
+
+    <!-- LISTAR NOVEDAD -->
+    <div>
+        <br>
+        <table class="table table-bordered">
+            <h3>Listar Novedad</h3>
+            <tr><td>Numero</td><td>11</td></tr>
+            <tr><td>Nombre endpoint</td><td>Listar novedades</td></tr>
+            <tr><td>URL</td><td>http://localhost:3000/novedad/listar</td></tr>
+            <tr><td>Descripción</td><td>Endpoint para listar las novedades de la base de datos</td></tr>
+            <tr><td>Verbo HTTP</td><td>GET</td></tr>
+            <tr><td>Header</td><td>Content-type: JSON</td></tr>
+            <tr><td>Request JSON</td><td>
+                {<br>
+                    null <br>
+                }</td></tr>
+            <tr><td>Response</td><td>
+                <div>Correcto:</div>
+                "status": "200"<br>
+                Body :{<br>
+                    
+                        "id_novedad": 3,<br>
+                        "tipo_novedad": "Daño PC Registro 1 actualizado",<br>
+                        "descripcion_novedad": "La pantalla no enciende (prueba) ",<br>
+                        "responsable_registro": "carlos cela",<br>
+                        "fecha_novedad": "2024-02-01T05:00:00.000Z",<br>
+                        "fk_id_prestamo": 1 <br>
+                    }
+                <div>Incorrecto</div>
+                "status": "404"<br>
+                Body :{<br>
+                "message: "Novedad no encontrada"<br>
+                }
+            </td></tr>
+        </table>
+    </div>
+    <!-- REGISTRAR NOVEDAD -->
+    <div>
+        <br>
+        <table class="table table-bordered">
+            <h3>Registrar Novedad</h3>
+            <tr><td>Numero</td><td>12</td></tr>
+            <tr><td>Nombre endpoint</td><td>Registrar novedades</td></tr>
+            <tr><td>URL</td><td>http://localhost:3000/novedad/registrar</td></tr>
+            <tr><td>Descripción</td><td>Endpoint para registrar las novedades de la base de datos</td></tr>
+            <tr><td>Verbo HTTP</td><td>POST</td></tr>
+            <tr><td>Header</td><td>Content-type: JSON</td></tr>
+            <tr><td>Request JSON</td><td>
+                {<br>
+                        "tipo_novedad": "Daño PC ejemplo1",<br>
+                        "descripcion_novedad": "La pantalla no enciende (prueba) ",<br>
+                        "responsable_registro": "carlos cela",<br>
+                        "fecha_novedad": "2024-02-01",<br>
+                        "fk_id_prestamo": 1 <br>
+                }</td></tr>
+            <tr><td>Response</td><td>
+                <div>Correcto:</div>
+                "status": "200"<br>
+                Body :{<br>
+                        "message": "se registro con exito la novedad"<br>
+                    }
+                <div>Incorrecto</div>
+                "status": "404"<br>
+                Body :{<br>
+                "message: "Error novedad no registrada"<br>
+                }
+            </td></tr>
+        </table>
+    </div>
+    <!-- ELIMINAR NOVEDAD -->
+    <div>
+        <br>
+        <table class="table table-bordered">
+            <h3>Eliminar Novedad</h3>
+            <tr><td>Numero</td><td>13</td></tr>
+            <tr><td>Nombre endpoint</td><td>Eliminar novedades</td></tr>
+            <tr><td>URL</td><td>http://localhost:3000/novedad/eliminar/:id</td></tr>
+            <tr><td>Descripción</td><td>Endpoint para Eliminar las novedades de la base de datos</td></tr>
+            <tr><td>Verbo HTTP</td><td>DELETE</td></tr>
+            <tr><td>Header</td><td>Content-type: JSON</td></tr>
+            <tr><td>Request JSON</td><td>
+                {<br>
+                    null <br>
+                }</td></tr>
+            <tr><td>Response</td><td>
+                <div>Correcto:</div>
+                "status": "200"<br>
+                Body :{<br>
+                        "message": "Novedad eliminada con exito"<br>
+                    }
+                <div>Incorrecto</div>
+                "status": "404"<br>
+                Body :{<br>
+                "message: "Novedad no eliminada"<br>
+                }
+            </td></tr>
+        </table>
+    </div>
+    <!-- ACTUALIZAR NOVEDAD -->
+    <div>
+        <br>
+        <table class="table table-bordered">
+            <h3>Actualizar Novedad</h3>
+            <tr><td>Numero</td><td>14</td></tr>
+            <tr><td>Nombre endpoint</td><td>Actualizar novedades</td></tr>
+            <tr><td>URL</td><td>http://localhost:3000/novedad/actualizar/:id</td></tr>
+            <tr><td>Descripción</td><td>Endpoint para Actualizar las novedades de la base de datos</td></tr>
+            <tr><td>Verbo HTTP</td><td>PUT</td></tr>
+            <tr><td>Header</td><td>Content-type: JSON</td></tr>
+            <tr><td>Request JSON</td><td>
+                {<br>
+                        "tipo_novedad": "Daño PC actualizado",<br>
+                        "descripcion_novedad": "La pantalla no enciende (prueba) ",<br>
+                        "responsable_registro": "carlos cela",<br>
+                        "fecha_novedad": "2024-02-01",<br>
+                        "fk_id_prestamo": 1 <br>
+                }</td></tr>
+            <tr><td>Response</td><td>
+                <div>Correcto:</div>
+                "status": "200"<br>
+                Body :{<br>
+                        "message": "Novedad actualizada con exito"<br>
+                    }
+                <div>Incorrecto</div>
+                "status": "404"<br>
+                Body :{<br>
+                "message: "novedad no actualizada"<br>
+                }
+            </td></tr>
+        </table>
+    </div>
+    <!-- CONSULTAR NOVEDAD POR ID -->
+    <div>
+        <br>
+        <table class="table table-bordered">
+            <h3>Consultar Novedad Por ID</h3>
+            <tr><td>Numero</td><td>15</td></tr>
+            <tr><td>Nombre endpoint</td><td>Consultar novedades Por ID</td></tr>
+            <tr><td>URL</td><td>http://localhost:3000/novedad/consultar/:id</td></tr>
+            <tr><td>Descripción</td><td>Endpoint para Consultar las novedades de la base de datos por ID</td></tr>
+            <tr><td>Verbo HTTP</td><td>GET</td></tr>
+            <tr><td>Header</td><td>Content-type: JSON</td></tr>
+            <tr><td>Request JSON</td><td>
+                {<br>
+                    null <br>
+                }</td></tr>
+            <tr><td>Response</td><td>
+                <div>Correcto:</div>
+                "status": "200"<br>
+                Body :{<br>
+                        "id_novedad": 3,<br>
+                        "tipo_novedad": "Daño PC actualizadojaaj",<br>
+                        "descripcion_novedad": "La pantalla no enciende (prueba) ",<br>
+                        "responsable_registro": "carlos cela",<br>
+                        "fecha_novedad": "2024-02-01T05:00:00.000Z",<br>
+                        "fk_id_prestamo": 1 <br>
+                    }
+                <div>Incorrecto</div>
+                "status": "404"<br>
+                Body :{<br>
+                "message: "novedad no encontrada"<br>
+                }
+            </td></tr>
+        </table>
+    </div>
+
+    <!-- LISTAR AREAS -->
+    <div>
+        <br>
+        <table class="table table-bordered">
+            <h3>Listar area</h3>
+            <tr><td>Numero</td><td>16</td></tr>
+            <tr><td>Nombre endpoint</td><td>Listar Area </td></tr>
+            <tr><td>URL</td><td>http://localhost:3000/area/listar</td></tr>
+            <tr><td>Descripción</td><td>Endpoint para Listar las Areas de la base de datos</td></tr>
+            <tr><td>Verbo HTTP</td><td>GET</td></tr>
+            <tr><td>Header</td><td>Content-type: JSON</td></tr>
+            <tr><td>Request JSON</td><td>
+                {<br>
+                    null <br>
+                }</td></tr>
+            <tr><td>Response</td><td>
+                <div>Correcto:</div>
+                "status": "200"<br>
+                Body :{<br>
+                        "id_area": 1,<br>
+                        "nombre_area": "Tics",<br>
+                        "estado": "libre"<br>
+                    }
+                <div>Incorrecto</div>
+                "status": "404"<br>
+                Body :{<br>
+                "message: "'No se encontraron areas'"<br>
+                }
+            </td></tr>
+        </table>
+    </div>
+    <!-- REGISTRAR AREAS -->
+    <div>
+        <br>
+        <table class="table table-bordered">
+            <h3>Registrar area</h3>
+            <tr><td>Numero</td><td>17</td></tr>
+            <tr><td>Nombre endpoint</td><td>Registrar Area </td></tr>
+            <tr><td>URL</td><td>http://localhost:3000/area/registrar</td></tr>
+            <tr><td>Descripción</td><td>Endpoint para Registrar las Areas de la base de datos</td></tr>
+            <tr><td>Verbo HTTP</td><td>POST</td></tr>
+            <tr><td>Header</td><td>Content-type: JSON</td></tr>
+            <tr><td>Request JSON</td><td>
+                {<br>
+                        "nombre_area": "Tics 2",<br>
+                        "estado": "ocupado" <br>
+                }</td></tr>
+            <tr><td>Response</td><td>
+                <div>Correcto:</div>
+                "status": "200"<br>
+                Body :{<br>
+                        "message": "Area registrada con exito" <br>
+                    }
+                <div>Incorrecto</div>
+                "status": "404"<br>
+                Body :{<br>
+                "message: 'No se registró el area'<br>
+                }
+            </td></tr>
+        </table>
+    </div>
+    <!-- ACTUALIZAR AREAS -->
+    <div>
+        <br>
+        <table class="table table-bordered">
+            <h3>Actualizar area</h3>
+            <tr><td>Numero</td><td>18</td></tr>
+            <tr><td>Nombre endpoint</td><td>Actualizar Area </td></tr>
+            <tr><td>URL</td><td>http://localhost:3000/area/actualizar/:id</td></tr>
+            <tr><td>Descripción</td><td>Endpoint para Actualizar las Areas de la base de datos</td></tr>
+            <tr><td>Verbo HTTP</td><td>PUT</td></tr>
+            <tr><td>Header</td><td>Content-type: JSON</td></tr>
+            <tr><td>Request JSON</td><td>
+                {<br>
+                        "nombre_area": "Tics actualizado 1",<br>
+                        "estado": "ocupado" <br>
+                }</td></tr>
+            <tr><td>Response</td><td>
+                <div>Correcto:</div>
+                "status": "200"<br>
+                Body :{<br>
+                        "message": "Area actualizada con exito" <br>
+                    }
+                <div>Incorrecto</div>
+                "status": "404"<br>
+                Body :{<br>
+                "message: ''No se actualizó el area''<br>
+                }
+            </td></tr>
+        </table>
+    </div>
+    <!-- ELIMINAR AREA -->
+    <div>
+        <br>
+        <table class="table table-bordered">
+            <h3>Eliminar area</h3>
+            <tr><td>Numero</td><td>19</td></tr>
+            <tr><td>Nombre endpoint</td><td>Eliminar Area </td></tr>
+            <tr><td>URL</td><td>http://localhost:3000/area/eliminar/:id</td></tr>
+            <tr><td>Descripción</td><td>Endpoint para Eliminar las Areas de la base de datos</td></tr>
+            <tr><td>Verbo HTTP</td><td>DELETE</td></tr>
+            <tr><td>Header</td><td>Content-type: JSON</td></tr>
+            <tr><td>Request JSON</td><td>
+                {<br>
+                    null <br>
+                }</td></tr>
+            <tr><td>Response</td><td>
+                <div>Correcto:</div>
+                "status": "200"<br>
+                Body :{<br>
+                        "message": "Se elimino el area con exito"<br>
+                    }
+                <div>Incorrecto</div>
+                "status": "404"<br>
+                Body :{<br>
+                "message: 'El area no se eliminó'<br>
+                }
+            </td></tr>
+        </table>
+    </div>
+    <!-- CONSULTAR AREA -->
+    <div>
+        <br>
+        <table class="table table-bordered">
+            <h3>Consultar area por ID</h3>
+            <tr><td>Numero</td><td>20</td></tr>
+            <tr><td>Nombre endpoint</td><td>Consultar Area </td></tr>
+            <tr><td>URL</td><td>http://localhost:3000/area/consultar/:id</td></tr>
+            <tr><td>Descripción</td><td>Endpoint para Consultar las Areas de la base de datos por ID</td></tr>
+            <tr><td>Verbo HTTP</td><td>GET</td></tr>
+            <tr><td>Header</td><td>Content-type: JSON</td></tr>
+            <tr><td>Request JSON</td><td>
+                {<br>
+                    null <br>
+                }</td></tr>
+            <tr><td>Response</td><td>
+                <div>Correcto:</div>
+                "status": "200"<br>
+                Body :{<br>
+                        "id_area": 1,
+                        "nombre_area": "Tics actualizado 1",
+                        "estado": "ocupado"
+                    }
+                <div>Incorrecto</div>
+                "status": "404"<br>
+                Body :{<br>
+                "message: 'No se encontró el area'<br>
+                }
+            </td></tr>
+        </table>
+    </div>
+
+    
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
