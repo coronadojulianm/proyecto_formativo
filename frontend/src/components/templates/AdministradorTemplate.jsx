@@ -5,10 +5,10 @@ import { SidebarCard } from "../../../index";
 export function AdministradorTemplate() {
   return (
     <Container>
-      <h1>Administrador Template Hola desde administrador</h1>
-      <>
-      <SidebarCard/>
-      </>
+      <h1>Usuario Template</h1>
+      <div>
+        <SidebarCard/>
+      </div>
       
     </Container>
   );
