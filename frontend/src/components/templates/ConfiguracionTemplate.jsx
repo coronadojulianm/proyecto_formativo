@@ -1,9 +1,13 @@
 import styled from "styled-components";
+import { SidebarCard } from "../../../index";
 
 export function ConfiguracionTemplate() {
   return (
     <Container>
       <h1>Configuracion Template Hola desde Configuracion</h1>
+      <div>
+        <SidebarCard/>
+      </div>
     </Container>
   );
 }

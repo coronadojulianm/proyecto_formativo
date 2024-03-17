@@ -2,6 +2,8 @@ import express from 'express';
 import usuarioRouter from './src/routers/usuarios.router.js';
 import bodyParser from "body-parser";
 
+import cors from 'cors'
+
 // Importacion de rutas
 import novedad from './src/routers/novedades.router.js';
 import elemento from "./src/routers/elementos.router.js";
@@ -13,6 +15,9 @@ import prestamos from './src/routers/prestamos.router.js';
 import fs from 'fs'
 
 const app = express();
+
+app.use(cors({ origin: 'http://localhost:5173' }));
+
 const PORT = 3000;
 
 app.use(express.json());

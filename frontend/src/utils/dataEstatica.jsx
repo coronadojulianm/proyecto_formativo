@@ -27,7 +27,7 @@ export const DesplegableUser = [
 //data SIDEBAR
 export const LinksArray = [
   {
-    label: "Administrador",
+    label: "Usuarios",
     icon: <v.iconoUser />,
     to: "/admin",
   },
