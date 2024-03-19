@@ -6,7 +6,7 @@ import { Device } from "./styles/breackpoints";
 
 export const ThemeContext = createContext(null);
 function App() {
-  const [themeuse, setTheme] = useState("dark");
+  const [themeuse, setTheme] = useState("light");
   const theme = themeuse === "light" ? "light" : "dark";
   const themeStyle = theme === "light" ? Light : Dark;
   const [sidebarOpen, setSidebarOpen] = useState(false);

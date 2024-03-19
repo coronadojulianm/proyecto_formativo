@@ -80,27 +80,27 @@ function ActualizarModal({ id_usuario }) {
               <div className="pt-4">
                 <div className="mb-4">
                     <label htmlFor="nombre" className="block text-gray-700 font-semibold">Nombre:</label>
-                    <input  type="text" id="nombre" name="nombre" value={formData.nombre} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-black rounded-md" required />
+                    <input  type="text" id="nombre" name="nombre" value={formData.nombre} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-gray-400 rounded-md" required />
                 </div>
                 <div className="mb-4">
                     <label htmlFor="identificacion" className="block text-gray-700 font-semibold">Identificación:</label>
-                    <input type="text" id="identificacion" name="identificacion" value={formData.identificacion} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-black rounded-md" required />
+                    <input type="text" id="identificacion" name="identificacion" value={formData.identificacion} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-gray-400 rounded-md" required />
                 </div>
                 <div className="mb-4">
                     <label htmlFor="telefono" className="block text-gray-700 font-semibold">Teléfono:</label>
-                    <input type="text" id="telefono" name="telefono" value={formData.telefono} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-black rounded-md" required />
+                    <input type="text" id="telefono" name="telefono" value={formData.telefono} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-gray-400 rounded-md" required />
                 </div>
                 <div className="mb-4">
                     <label htmlFor="correo" className="block text-gray-700 font-semibold">Correo:</label>
-                    <input type="email" id="correo" name="correo" value={formData.correo} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-black rounded-md" required />
+                    <input type="email" id="correo" name="correo" value={formData.correo} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-gray-400 rounded-md" required />
                 </div>
                 <div className="mb-4">
                     <label htmlFor="contraseña" className="block text-gray-700 font-semibold">Contraseña:</label>
-                    <input type="password" id="contraseña" name="contraseña" value={formData.contraseña} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-black rounded-md" required />
+                    <input type="password" id="contraseña" name="contraseña" value={formData.contraseña} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-gray-400 rounded-md" required />
                 </div>
                 <div className="mb-4">
                   <label htmlFor="tipo_usuario" className="block text-gray-700 font-semibold">Tipo de Usuario:</label>
-                  <select id="tipo_usuario" name="tipo_usuario" value={formData.tipo_usuario} onChange={handleChange} className="form-input mt-1 block w-full text-black" required>
+                  <select id="tipo_usuario" name="tipo_usuario" value={formData.tipo_usuario} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-gray-400 rounded-md" required>
                     <option value="celador">Celador</option>
                     <option value="instructor">Instructor</option>
                     <option value="administrador">Administrador</option>
@@ -108,7 +108,7 @@ function ActualizarModal({ id_usuario }) {
                 </div>
                 <div className="mb-4">
                   <label htmlFor="estado_usuario" className="block text-gray-700 font-semibold">Estado de Usuario:</label>
-                  <select id="estado_usuario" name="estado_usuario" value={formData.estado_usuario} onChange={handleChange} className="form-input mt-1 block w-full text-black" required>
+                  <select id="estado_usuario" name="estado_usuario" value={formData.estado_usuario} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-gray-400 rounded-md" required>
                     <option value="activo">Activo</option>
                     <option value="inactivo">Inactivo</option>
                   </select>

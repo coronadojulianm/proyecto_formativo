@@ -41,8 +41,8 @@ export function AdministradorTemplate() {
       <div class="relative overflow-x-auto sm:rounded-lg">
         <h1 class=" flex justify-center uppercase mb-5 bg-transparent">Tabla usuarios registrados</h1>
         <Modal/>
-          <table class="text-left rtl:text-right text-white dark:text-white">
-              <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-green-900 dark:text-gray-400">
+          <table class="text-left rtl:text-right">
+              <thead class="text-xs text-white uppercase bg-green-700 ">
                   <tr>
                       <th scope="col" class="px-6 py-3">
                           ID
@@ -69,7 +69,7 @@ export function AdministradorTemplate() {
               </thead>
               <tbody>
                 {usuarios.map((usuario)=>(
-                  <tr class="bg-white border-b dark:bg-green-700 dark:border-gray-700">
+                  <tr class="bg-gray-300 text-black border-b border-gray-700">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     {usuario.id_usuario}
                   </th>
