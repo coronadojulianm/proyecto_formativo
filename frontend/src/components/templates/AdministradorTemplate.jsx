@@ -69,7 +69,7 @@ export function AdministradorTemplate() {
               </thead>
               <tbody>
                 {usuarios.map((usuario)=>(
-                  <tr class="bg-gray-300 text-black border-b border-gray-700">
+                  <tr class="bg-gray-200 text-black border-b border-gray-700">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     {usuario.id_usuario}
                   </th>
