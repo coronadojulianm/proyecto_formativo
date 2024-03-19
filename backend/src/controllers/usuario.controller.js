@@ -60,7 +60,7 @@ export const crearUsuario = async (req, res) => {
 
   try {
     await pool.query(
-      'UPDATE usuario SET tipo_usuario = ?, nombre = ?, correo = ?, telefono = ?, identificacion = ?, contraseña = ? WHERE id_usuario = ?',
+      'UPDATE usuario SET tipo_usuario = ?, nombre = ?, correo = ?, telefono = ?, identificacion = ?, contraseña = ?, estado_usuario = ?  WHERE id_usuario = ?',
       [
         datosUsuario.tipo_usuario,
         datosUsuario.nombre,
@@ -68,6 +68,7 @@ export const crearUsuario = async (req, res) => {
         datosUsuario.telefono,
         datosUsuario.identificacion,
         datosUsuario.contraseña,
+        datosUsuario.estado_usuario,
         id,
       ]
     );
