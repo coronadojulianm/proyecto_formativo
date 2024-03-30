@@ -2,7 +2,7 @@ import styled from "styled-components";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ModalReg from "../moleculas/ModalRegPrestamo";
-import ModalAct from "../moleculas/ModalActuPrestamo";
+// import ModalAct from "../moleculas/ModalActuPrestamo";
 
 
 export function PrestamosTemplate() {
@@ -88,7 +88,7 @@ const EliminarPrestamo = async (id_prestamo)=>{
                   </td>
                   <td class="px-6 py-4">
                     <button onClick={()=> EliminarPrestamo(prestamo.id_prestamo)} type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Eliminar</button>
-                    <ModalAct id_Prestamo={prestamo.id_prestamo}/>
+                    {/* <ModalAct id_Prestamo={prestamo.id_prestamo}/> */}
                   </td>
               </tr>
                 ))}                
