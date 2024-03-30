@@ -37,10 +37,16 @@ export const LinksArray = [
     to: "/",
   },
   {
+    label: "Prestamos",
+    icon: <v.iconocheck />,
+    to: "/prestamos",
+  },
+  {
     label: "Inventario",
     icon: <v.iconocategorias />,
     to: "/inventario",
   },
+  
   {
     label: "Reportes",
     icon: <v.iconoreportes />,

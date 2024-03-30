@@ -41,10 +41,10 @@ export function AdministradorTemplate() {
       <div class="relative overflow-x-auto sm:rounded-lg">
         <h1 class=" flex justify-center uppercase mb-5 bg-transparent">Tabla usuarios registrados</h1>
         <Modal/>
-          <table class="text-left rtl:text-right text-white dark:text-white">
-              <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-green-900 dark:text-gray-400">
+          <table class="text-left rtl:text-right">
+              <thead class="text-xs text-white uppercase bg-green-800 ">
                   <tr>
-                      <th scope="col" class="px-6 py-3">
+                      <th scope="col" class="px-6 py-3 text">
                           ID
                       </th>
                       <th scope="col" class="px-6 py-3">
@@ -63,14 +63,17 @@ export function AdministradorTemplate() {
                           Tipo
                       </th>
                       <th scope="col" class="px-6 py-3">
+                          Estado
+                      </th>
+                      <th scope="col" class="px-6 py-3">
                           Action
                       </th>
                   </tr>
               </thead>
               <tbody>
                 {usuarios.map((usuario)=>(
-                  <tr class="bg-white border-b dark:bg-green-700 dark:border-gray-700">
-                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  <tr class="bg-green-700 text-white border-b border-gray-700">
+                  <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap">
                     {usuario.id_usuario}
                   </th>
                   <td class="px-6 py-4">
@@ -87,6 +90,9 @@ export function AdministradorTemplate() {
                   </td>
                   <td class="px-6 py-4">
                       {usuario.tipo_usuario}
+                  </td>
+                  <td class="px-6 py-4">
+                      {usuario.estado_usuario}
                   </td>
                   <td class="px-6 py-4">
                     <button onClick={()=> EliminarUsuario(usuario.id_usuario)} type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Eliminar</button>
