@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Home, Admin , Inventario , Reportes, Configuracion } from "../index";
+import { Home, Admin , Inventario , Reportes, Configuracion, Prestamos } from "../index";
 export function MyRoutes() {
   return ( 
       <Routes>
@@ -8,6 +8,7 @@ export function MyRoutes() {
         <Route path="/inventario" element={<Inventario/>}/>
         <Route path="/reportes" element={<Reportes/>}/>
         <Route path="/configuracion" element={<Configuracion/>}/>
+        <Route path="/prestamos" element={<Prestamos/>}/>
 
       </Routes>
     

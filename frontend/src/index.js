@@ -2,14 +2,17 @@ export { default as App, ThemeContext } from './App';
 export { AuthContextProvider, UserAuth } from './context/authContext';
 export {  } from './main';
 
+
 export { Home } from './pages/home';
 export { Admin } from './pages/Administrador';
 export { Inventario } from './pages/Inventario';
 export { Reportes } from './pages/Reportes';
 export { Configuracion } from './pages/Configuracion';
+export { Prestamos } from './pages/Prestamos';
 
 
 export { MyRoutes } from './routers/routes';
+
 
 
 export { supabase } from './supabase/supabase.config';
