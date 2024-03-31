@@ -9,7 +9,7 @@ export { Inventario } from './pages/Inventario';
 export { Reportes } from './pages/Reportes';
 export { Configuracion } from './pages/Configuracion';
 export { Prestamos } from './pages/Prestamos';
-
+export { Areas } from './pages/Areas'
 
 export { MyRoutes } from './routers/routes';
 

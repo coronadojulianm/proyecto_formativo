@@ -52,6 +52,12 @@ export const LinksArray = [
     icon: <v.iconoreportes />,
     to: "/novedades",
   },
+
+  {
+    label: "Areas",
+    icon: <v.iconomarca />,
+    to: "/areas",
+  },
  
 ];
 export const SecondarylinksArray = [
