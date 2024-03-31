@@ -6,7 +6,7 @@ export function MyRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Admin/>}/>
         <Route path="/inventario" element={<Inventario/>}/>
-        <Route path="/reportes" element={<Reportes/>}/>
+        <Route path="/novedades" element={<Reportes/>}/>
         <Route path="/configuracion" element={<Configuracion/>}/>
         <Route path="/prestamos" element={<Prestamos/>}/>
 

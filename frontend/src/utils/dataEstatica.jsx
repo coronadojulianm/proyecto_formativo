@@ -48,9 +48,9 @@ export const LinksArray = [
   },
   
   {
-    label: "Reportes",
+    label: "Novedades",
     icon: <v.iconoreportes />,
-    to: "/reportes",
+    to: "/novedades",
   },
  
 ];
