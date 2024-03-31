@@ -41,16 +41,29 @@ export const LinksArray = [
     icon: <v.iconocheck />,
     to: "/prestamos",
   },
+  
+  {
+    label: "Novedades",
+    icon: <v.iconoreportes />,
+    to: "/novedades",
+  },
+
+  {
+    label: "Areas",
+    icon: <v.iconomarca />,
+    to: "/areas",
+  },
+
+  {
+    label: "Ambientes",
+    icon: <v.iconocorona />,
+    to: "/ambientes",
+  },
+
   {
     label: "Inventario",
     icon: <v.iconocategorias />,
     to: "/inventario",
-  },
-  
-  {
-    label: "Reportes",
-    icon: <v.iconoreportes />,
-    to: "/reportes",
   },
  
 ];
