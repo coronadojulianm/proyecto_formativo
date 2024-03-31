@@ -12,6 +12,23 @@ function ModalActuPrestamo({ id_prestamo }) {
     fk_usuario: '',
     fk_ambiente: ''
   });
+  const [usuarios, setUsuarios] = useState([]);
+  const [ambientes, setAmbientes] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const usuariosResponse = await axios.get('http://localhost:3000/usuarios/listar');
+        const ambientesResponse = await axios.get('http://localhost:3000/ambientes/listar');
+        setUsuarios(usuariosResponse.data);
+        setAmbientes(ambientesResponse.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     async function fetchPrestamoData() {
@@ -34,7 +51,7 @@ function ModalActuPrestamo({ id_prestamo }) {
       }
     }
 
-    if (isOpen) {
+    if (isOpen && id_prestamo) {
       fetchPrestamoData();
     }
   }, [isOpen, id_prestamo]);
@@ -59,7 +76,7 @@ function ModalActuPrestamo({ id_prestamo }) {
       console.log('Préstamo actualizado:', response.data);
       alert('Préstamo actualizado con éxito');
       toggleModal();
-      window.location.reload(); // Esto recargará la página para reflejar los cambios en la lista
+      window.location.reload();
     } catch (error) {
       console.error('Error al actualizar el préstamo:', error);
     }
@@ -83,10 +100,15 @@ function ModalActuPrestamo({ id_prestamo }) {
             </div>
             <form onSubmit={handleActualizar}>
               <div className="pt-4">
-                <div className="mb-4">
+                {/* <div className="mb-4">
                   <label htmlFor="nombre_ambiente" className="block text-gray-700 font-semibold">Nombre Ambiente:</label>
-                  <input type="text" id="nombre_ambiente" name="nombre_ambiente" value={formData.nombre_ambiente} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-gray-400 rounded-md" required />
-                </div>
+                  <select id="nombre_ambiente" name="fk_ambiente" value={formData.fk_ambiente} onChange={handleChange} className="form-select mt-1 block w-full text-black border-solid border-2 border-gray-400 rounded-md" required>
+                    <option value="">Selecciona un ambiente</option>
+                    {ambientes.map((ambiente) => (
+                      <option key={ambiente.id_ambiente} value={ambiente.id_ambiente}>{ambiente.nombre}</option>
+                    ))}
+                  </select>
+                </div> */}
                 <div className="mb-4">
                   <label htmlFor="fecha_prestamo" className="block text-gray-700 font-semibold">Fecha Prestamo:</label>
                   <input type="date" id="fecha_prestamo" name="fecha_prestamo" value={formData.fecha_prestamo} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-gray-400 rounded-md" required />
@@ -105,11 +127,12 @@ function ModalActuPrestamo({ id_prestamo }) {
                 </div>
                 <div className="mb-4">
                   <label htmlFor="fk_usuario" className="block text-gray-700 font-semibold">ID Usuario:</label>
-                  <input type="text" id="fk_usuario" name="fk_usuario" value={formData.fk_usuario} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-gray-400 rounded-md" required />
-                </div>
-                <div className="mb-4">
-                  <label htmlFor="fk_ambiente" className="block text-gray-700 font-semibold">ID Ambiente:</label>
-                  <input type="text" id="fk_ambiente" name="fk_ambiente" value={formData.fk_ambiente} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-gray-400 rounded-md" required />
+                  <select id="fk_usuario" name="fk_usuario" value={formData.fk_usuario} onChange={handleChange} className="form-select mt-1 block w-full text-black border-solid border-2 border-gray-400 rounded-md" required>
+                    <option value="">Selecciona un usuario</option>
+                    {usuarios.map((usuario) => (
+                      <option key={usuario.id_usuario} value={usuario.id_usuario}>{usuario.nombre}</option>
+                    ))}
+                  </select>
                 </div>
               </div>
               <div className="flex justify-end pt-4">
@@ -125,4 +148,5 @@ function ModalActuPrestamo({ id_prestamo }) {
 }
 
 export default ModalActuPrestamo;
+
 

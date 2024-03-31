@@ -41,11 +41,6 @@ export const LinksArray = [
     icon: <v.iconocheck />,
     to: "/prestamos",
   },
-  {
-    label: "Inventario",
-    icon: <v.iconocategorias />,
-    to: "/inventario",
-  },
   
   {
     label: "Novedades",
@@ -57,6 +52,18 @@ export const LinksArray = [
     label: "Areas",
     icon: <v.iconomarca />,
     to: "/areas",
+  },
+
+  {
+    label: "Ambientes",
+    icon: <v.iconocorona />,
+    to: "/ambientes",
+  },
+
+  {
+    label: "Inventario",
+    icon: <v.iconocategorias />,
+    to: "/inventario",
   },
  
 ];

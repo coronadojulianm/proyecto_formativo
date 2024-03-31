@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function Modal() {
@@ -12,6 +12,31 @@ function Modal() {
     fk_usuario: '',
     fk_ambiente: ''
   });
+  const [usuarios, setUsuarios] = useState([]);
+  const [ambientes, setAmbientes] = useState([]);
+
+  useEffect(() => {
+    const fetchUsuarios = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/usuarios/listar");
+        setUsuarios(response.data);
+      } catch (error) {
+        console.error("Error Fetching usuarios:", error);
+      }
+    };
+
+    const fetchAmbientes = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/ambientes/listar");
+        setAmbientes(response.data);
+      } catch (error) {
+        console.error("Error Fetching ambientes:", error);
+      }
+    };
+
+    fetchUsuarios();
+    fetchAmbientes();
+  }, []);
 
   const toggleModal = () => {
     setIsOpen(!isOpen);
@@ -22,6 +47,16 @@ function Modal() {
     setFormData({
       ...formData,
       [name]: value
+    });
+  };
+  
+  const handleAmbienteChange = (e) => {
+    const { value } = e.target;
+    const selectedAmbiente = ambientes.find(ambiente => ambiente.nombre_ambiente === value);
+    setFormData({
+      ...formData,
+      nombre_ambiente: value,
+      fk_ambiente: selectedAmbiente ? selectedAmbiente.id_ambiente : ''
     });
   };
   
@@ -60,7 +95,12 @@ function Modal() {
             <form onSubmit={registrarPrestamo}>
               <div className="mb-4">
                 <label htmlFor="nombre_ambiente" className="block text-gray-700 font-semibold">Nombre del Ambiente:</label>
-                <input  type="text" id="nombre_ambiente" name="nombre_ambiente" value={formData.nombre_ambiente} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-gray-400 rounded-md" required />
+                <select id="nombre_ambiente" name="nombre_ambiente" value={formData.nombre_ambiente} onChange={handleAmbienteChange} className="form-select mt-1 block w-full text-black border-solid border-2 border-gray-400 rounded-md" required>
+                  <option value="">Seleccionar Ambiente</option>
+                  {ambientes.map((ambiente) => (
+                    <option key={ambiente.id_ambiente} value={ambiente.nombre_ambiente}>{ambiente.nombre_ambiente}</option>
+                  ))}
+                </select>
               </div>
               <div className="mb-4">
                 <label htmlFor="fecha_prestamo" className="block text-gray-700 font-semibold">Fecha de Préstamo:</label>
@@ -79,12 +119,13 @@ function Modal() {
                 <input type="text" id="observaciones" name="observaciones" value={formData.observaciones} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-gray-400 rounded-md" required />
               </div>
               <div className="mb-4">
-                <label htmlFor="fk_usuario" className="block text-gray-700 font-semibold">ID del Usuario:</label>
-                <input type="text" id="fk_usuario" name="fk_usuario" value={formData.fk_usuario} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-gray-400 rounded-md" required />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="fk_ambiente" className="block text-gray-700 font-semibold">ID del Ambiente:</label>
-                <input type="text" id="fk_ambiente" name="fk_ambiente" value={formData.fk_ambiente} onChange={handleChange} className="form-input mt-1 block w-full text-black border-solid border-2 border-gray-400 rounded-md" required />
+                <label htmlFor="fk_usuario" className="block text-gray-700 font-semibold">Usuario:</label>
+                <select id="fk_usuario" name="fk_usuario" value={formData.fk_usuario} onChange={handleChange} className="form-select mt-1 block w-full text-black border-solid border-2 border-gray-400 rounded-md" required>
+                  <option value="">Seleccionar Usuario</option>
+                  {usuarios.map((usuario) => (
+                    <option key={usuario.id_usuario} value={usuario.id_usuario}>{usuario.nombre}</option>
+                  ))}
+                </select>
               </div>
               <div className="flex justify-end pt-4">
                   <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2">Registrar</button>
@@ -100,3 +141,7 @@ function Modal() {
 }
 
 export default Modal;
+
+
+
+
