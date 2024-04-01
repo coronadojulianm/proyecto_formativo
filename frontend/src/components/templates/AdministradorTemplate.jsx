@@ -8,6 +8,7 @@ export function AdministradorTemplate() {
   const[usuarios,setUsuarios]= useState([]);
 
   // CONEXION LISTAR USUARIOS
+  
   useEffect(()=>{
     const fetchData = async()=>{
       try {
