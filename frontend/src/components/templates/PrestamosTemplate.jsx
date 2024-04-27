@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ModalReg from "../moleculas/ModalRegPrestamo";
 import ModalAct from "../moleculas/ModalActuPrestamo";
 
+
 export function PrestamosTemplate() {
     const [prestamos, setPrestamos] = useState([]);
 
