@@ -1,0 +1,4 @@
+Cambiar colores de las tablas
+Cambiar logo (crear logos y nombres)
+Agregar sweet alerts
+Cambiar talbas material UI
