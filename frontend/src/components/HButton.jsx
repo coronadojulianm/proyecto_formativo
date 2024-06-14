@@ -1,13 +1,14 @@
 import React from 'react';
+import { FaBars } from 'react-icons/fa';
 
-const HButton = ({ toggleSidebar }) => {
+const HButton = ({ isOpen, toggleSidebar }) => {
   return (
-    <div className="flex flex-col justify-between w-8 h-6 cursor-pointer" onClick={toggleSidebar}>
-      <div className="w-full h-1 bg-gray-800"></div>
-      <div className="w-full h-1 bg-gray-800"></div>
-      <div className="w-full h-1 bg-gray-800"></div>
-    </div>
+    <button onClick={toggleSidebar} className="text-white p-2 focus:outline-none">
+      <FaBars className="text-xl" />
+    </button>
   );
 };
 
 export default HButton;
+
+

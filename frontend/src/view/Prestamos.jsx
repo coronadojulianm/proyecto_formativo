@@ -15,13 +15,10 @@ export default function Home() {
       <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <div className={`transition-transform duration-300 ${isSidebarOpen ? 'ml-64' : 'ml-0'}`}>
         <div className="p-4 mt-16"> {/* mt-16 para compensar la altura del Navbar */}
-          <h1 className="text-3xl font-bold text-blue-500">Home</h1>
-          <p>Bienvenido a la página de inicio.</p>
+          <h1 className="text-3xl font-bold text-blue-500">Prestamos</h1>
+          <p>Bienvenido a la página de Prestamos.</p>
         </div>
       </div>
     </>
   );
 }
-
-
-
