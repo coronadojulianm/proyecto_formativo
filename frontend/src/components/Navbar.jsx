@@ -1,9 +1,9 @@
 import React from 'react';
-import HButton from './HButton';
+import HButton from './moleculas/HButton';
 
 const Navbar = ({ isOpen, toggleSidebar }) => {
   return (
-    <div className="fixed top-0 left-0 w-full bg-green-800 text-white flex justify-between items-center p-4">
+    <div className="fixed top-0 left-0 w-full bg-lime-600 text-white flex justify-between items-center p-4">
       <div className="flex items-center">
         <HButton isOpen={isOpen} toggleSidebar={toggleSidebar} />
       </div>
